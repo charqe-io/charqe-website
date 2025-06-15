@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Charqe</h3>
             <p className="text-gray-300">
-              We are in charqe. - Bilişim çözümlerinde 360° yaklaşımla 
+              Bilişim çözümlerinde 360° yaklaşımla 
               kapsamlı ve etkili sistemler geliştiriyoruz.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-400">
