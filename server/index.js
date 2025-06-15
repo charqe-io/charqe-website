@@ -16,10 +16,11 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
+    const port = Number(process.env.SMTP_PORT) || 465;
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: true,
+      port,
+      secure: port === 465,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -27,8 +28,9 @@ app.post('/api/contact', async (req, res) => {
     });
 
     const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: process.env.CONTACT_EMAIL || 'info@charqe.io',
+      from: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
+      replyTo: `"${name}" <${email}>`,
+      to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
       subject: `Yeni Proje Başvurusu - ${company || 'Şahıs'}`,
       text: [
         `Ad Soyad: ${name}`,
