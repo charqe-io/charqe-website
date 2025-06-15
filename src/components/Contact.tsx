@@ -10,25 +10,24 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, company, message } = formData;
-    const subject = `Yeni Proje Başvurusu - ${company || 'Şahıs'}`;
-    const bodyLines = [
-      `Ad Soyad: ${name}`,
-      `E-posta: ${email}`,
-      company ? `Şirket/Kurum: ${company}` : undefined,
-      '',
-      'Mesaj:',
-      message,
-    ].filter(Boolean);
-    const body = bodyLines.join('\n');
 
-    window.location.href =
-      `mailto:info@charqe.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    if (response.ok) {
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', company: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } else {
+      alert('Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
