@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Charqe">
+  <defs>
+    <linearGradient id="cq" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1D4ED8" />
+      <stop offset="1" stop-color="#0E7490" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#cq)" />
+  <!-- 360 derece cember, saginda bir bosluk: kapanmayi bekleyen paydas -->
+  <path
+    d="M43.08 17.82A18 18 0 1 0 43.08 46.18"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+  <!-- Cekirdek: tekil bulusma noktasi -->
+  <circle cx="32" cy="32" r="7" fill="#FFFFFF" />
+  <!-- Boslugu kapatan dugum -->
+  <circle cx="50" cy="32" r="3.5" fill="#FFFFFF" />
+</svg>
