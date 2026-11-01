@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Wort's app icon: the key character (src/ui/logo.ts) on the game's dark radar background. -->
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.42" r="0.78">
+      <stop offset="0" stop-color="#262463" />
+      <stop offset="0.55" stop-color="#131438" />
+      <stop offset="1" stop-color="#070820" />
+    </radialGradient>
+    <clipPath id="tile"><rect width="512" height="512" rx="114" /></clipPath>
+    <linearGradient id="face" x1="0" y1="100" x2="0" y2="376" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff86b0" />
+      <stop offset="1" stop-color="#ff4f8b" />
+    </linearGradient>
+    <filter id="key-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#ff4f8b" flood-opacity="0.45" />
+    </filter>
+    <filter id="eye-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#7ef9ff" flood-opacity="0.9" />
+    </filter>
+    <filter id="spark-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22d3ee" flood-opacity="0.8" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="114" fill="url(#bg)" />
+  <g clip-path="url(#tile)" fill="none" stroke="rgba(130,150,255,0.09)" stroke-width="3">
+    <circle cx="256" cy="256" r="120" />
+    <circle cx="256" cy="256" r="200" />
+    <circle cx="256" cy="256" r="280" />
+    <circle cx="256" cy="256" r="360" />
+  </g>
+  <g filter="url(#key-glow)">
+    <rect x="116" y="140" width="280" height="276" rx="58" fill="#a3184a" />
+    <rect x="116" y="100" width="280" height="276" rx="58" fill="url(#face)" />
+  </g>
+  <rect x="140" y="118" width="232" height="226" rx="44" fill="rgba(255,255,255,0.14)" />
+  <path d="M0,0 L11,60 L25,20 L39,60 L50,0" transform="translate(157.5 125.4) scale(0.82)" fill="none" stroke="#fff" stroke-width="18.3" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="160" y="200" width="192" height="88" rx="44" fill="#0b1530" stroke="rgba(255,255,255,0.2)" stroke-width="4" />
+  <g fill="#7ef9ff" filter="url(#eye-glow)">
+    <ellipse cx="218" cy="244" rx="19" ry="25" />
+    <ellipse cx="294" cy="244" rx="19" ry="25" />
+  </g>
+  <circle cx="225" cy="234" r="7" fill="#fff" />
+  <circle cx="301" cy="234" r="7" fill="#fff" />
+  <path d="M232,312 Q256,330 280,312" fill="none" stroke="#a3184a" stroke-width="11" stroke-linecap="round" />
+  <g stroke="#22d3ee" stroke-width="13" stroke-linecap="round" filter="url(#spark-glow)">
+    <path d="M418,76 L442,52" />
+    <path d="M426,98 L458,90" />
+    <path d="M398,68 L406,38" />
+  </g>
+</svg>
